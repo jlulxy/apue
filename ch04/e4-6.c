@@ -1,3 +1,5 @@
+//** See more test in ./filehole/
+
 #include "apue.h"
 
 char buf1[] = "abcde";
