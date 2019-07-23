@@ -33,3 +33,11 @@ int main(int argc, char** argv) {
 	exit(0);
 }
 
+/*
+ * If stat is called, it always tries to follow a symbolic link, so the program
+ * will never print a file type of "symbolic link". For the example shown in
+ * the text, where /dev/cdrom is a symbolic link to /dav/sr0, stat reports that
+ * /dev/chrom is a block special file, not a symbolic link. If the symbolic
+ * link points to a nonexistent file, stat return an error.
+ */
+
