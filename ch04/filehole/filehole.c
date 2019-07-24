@@ -7,6 +7,8 @@ char buf1[] = "abcdexxxxx";
 char buf2[] = "ABCDEXXXXX";
 char buf3[16384];
 
+void my_cp();
+
 int main(int argc, char** argv) {
 	//** create testfile.hold
 	int fd;
@@ -117,11 +119,65 @@ int main(int argc, char** argv) {
 	off_t next_data_16380 = lseek(fd, 16380, SEEK_DATA);
 	printf("next_data_16380=%ld\n", next_data_16380);
 	close(fd);
-
+	
+	/* Update at 2019-07-23*/
+	my_cp();
 	exit(0);
 }
 
-void test_my_font() {
-	printf("Courier New may be the best is Xshell.\n");
+void my_cp() {
+	//** create test file: file1.hold and file1.copy
+	int fd, fd_copy;
+	if ((fd = open("file1.hole", O_RDWR)) < 0) {
+		err_sys("open error");
+	}
+	if (write(fd, buf1, 10) != 10) {
+		err_sys("buf1 write error");
+	}
+	if (lseek(fd, 1000000, SEEK_SET) == -1) {
+		err_sys("lseek error");
+	}
+	if (write(fd, buf2, 10) != 10) {
+		err_sys("buf1 write error");
+	}
+	if ((fd_copy = creat("file1.copy", FILE_MODE)) < 0) {
+		err_sys("create error");
+	}
+	
+	//** set off_set to 0
+	if (lseek(fd, 0, SEEK_SET) == -1) {
+		err_sys("lseek error");
+	}
+	
+	off_t last_data = 0;
+	off_t next_data = 0;
+	off_t next_hole = 0;
+	off_t currpos = 0;
+	ssize_t read_len = -1;
+	while ((next_data = lseek(fd, last_data, SEEK_DATA)) >= last_data) {
+		next_hole = lseek(fd, next_data, SEEK_HOLE);
+		last_data = next_hole + 1;
+		printf("cp currpos=%ld\n", currpos);
+		printf("cp next_data=%ld\n", next_data);
+		printf("cp next_hole=%ld\n", next_hole);
+		printf("cp last_data=%ld\n", last_data);
+		if ((currpos = lseek(fd, next_data, SEEK_SET)) < 0) {
+			err_sys("reset lseek error");
+		}
+		if ((read_len = read(fd, buf3, next_hole - next_data)) < 0) {
+			err_sys("buf3 read error");
+		}
+		printf("cp read_len=%ld\n", read_len);
+
+		//** write to file1.copy
+		if ((currpos = lseek(fd_copy, next_data, SEEK_SET)) < 0) {
+			err_sys("lseek with SEEK_SET to create hole error");
+		}
+		if (write(fd_copy, buf3, read_len) != read_len) {
+			err_sys("buf3 write error");
+		}
+	}
+	close(fd);
+	close(fd_copy);
 }
 
