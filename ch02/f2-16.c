@@ -52,3 +52,7 @@ char* path_alloc(size_t *sizep) {
 	return ptr;
 }
 
+int main(void) {
+	printf("pathmax=%ld\n", pathmax);
+}
+

@@ -17,6 +17,12 @@ int main(int argc, char** argv) {
 	if (argc != 2) {
 		err_quit("usage: ftw <starting-pathname>");
 	}
+	
+	/* If input filepath has '/' tail, then we should earse it. */
+	int len = strlen(argv[1]);
+	if (len > 0 && argv[1][len-1] == '/') {
+		argv[1][len-1] = 0;
+	}
 
 	ret = myftw(argv[1], myfunc);
 
@@ -24,13 +30,13 @@ int main(int argc, char** argv) {
 	if (ntot == 0) {
 		ntot = 1;
 	}
-	printf("regular files = %7ld, %5.2f %%\n", ndir, ndir*100.0/ntot);
-	printf("directories = %7ld, %5.2f %%\n", ndir, ndir*100.0/ntot);
-	printf("block special = %7ld, %5.2f %%\n", nblk, nblk*100.0/ntot);
-	printf("char special = %7ld, %5.2f %%\n", nchr, nchr*100.0/ntot);
-	printf("FIFOs = %7ld, %5.2f %%\n", nfifo, nfifo*100.0/ntot);
+	printf("regular files  = %7ld, %5.2f %%\n", ndir, ndir*100.0/ntot);
+	printf("directories    = %7ld, %5.2f %%\n", ndir, ndir*100.0/ntot);
+	printf("block special  = %7ld, %5.2f %%\n", nblk, nblk*100.0/ntot);
+	printf("char special   = %7ld, %5.2f %%\n", nchr, nchr*100.0/ntot);
+	printf("FIFOs          = %7ld, %5.2f %%\n", nfifo, nfifo*100.0/ntot);
 	printf("symbolic links = %7ld, %5.2f %%\n", nslink, nslink*100.0/ntot);
-	printf("sockets = %7ld, %5.2f %%\n", nsock, nsock*100.0/ntot);
+	printf("sockets        = %7ld, %5.2f %%\n", nsock, nsock*100.0/ntot);
 
 	exit(ret);
 }
@@ -48,16 +54,14 @@ static size_t pathlen;
 
 static int myftw(char *pathname, Myfunc *func) {
 	fullpath = path_alloc(&pathlen);
-	printf("myftw(): fullpath=%s, pathlen=%ld\n", fullpath, pathlen);
-	
 	if (pathlen <= strlen(pathname)) {
 		pathlen = strlen(pathname) * 2;
 		if ((fullpath = realloc(fullpath, pathlen)) == NULL) {
 			err_sys("realloc failed");
 		}
-		strcpy(fullpath, pathname);
-		return dopath(func);
 	}
+	strcpy(fullpath, pathname);
+	return dopath(func);
 }
 
 /*
@@ -95,7 +99,9 @@ static int dopath(Myfunc* func) {
 			err_sys("realloc failed");
 		}
 	}
-	fullpath[n++] = '/';
+	
+	fullpath[n] = '/';
+	n++;
 	fullpath[n] = 0;
 
 	if ((dp = opendir(fullpath)) == NULL) {
@@ -110,18 +116,17 @@ static int dopath(Myfunc* func) {
 		if ((ret = dopath(func)) != 0) {
 			break;
 		}
-		fullpath[n-1] = 0;
-
-		if (closedir(dp) < 0) {
-			err_ret("can't close directory %s", fullpath);
-		}
-
-		return ret;
 	}
+	
+	fullpath[n-1] = 0;
+	if (closedir(dp) < 0) {
+		err_ret("can't close directory %s", fullpath);
+	}
+
+	return ret;
 }
 
 static int myfunc(const char *pathname, const struct stat *statptr, int type) {
-	printf("myfunc() pathname=%s, type=%d\n", pathname, type);
 	switch (type) {
 		case FTW_F:
 			switch (statptr->st_mode & S_IFMT) {
