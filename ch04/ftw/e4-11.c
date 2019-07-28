@@ -14,6 +14,7 @@ int main(int argc, char** argv) {
 	if (argc != 2) {
 		err_quit("usage: ftw <starting-pathname>");
 	}
+	/* If input filepath has '/' tail, then we should earse it. */
 	int len = strlen(argv[1]);
 	if (len > 0 && argv[1][len-1] == '/') {
 		argv[1][len-1] = 0;
@@ -43,9 +44,9 @@ int main(int argc, char** argv) {
 #define FTW_D 2   /* directory */
 #define FTW_DNR 3 /* directory that can’t be read */
 #define FTW_NS 4  /* file that we can’t stat */
-static char *fullpath; /* contains full pathname for every file */
-static size_t pathlen;
 
+static char *fullpath; 
+static size_t pathlen;
 static int myftw(char *pathname, Myfunc *func) {
 	fullpath = path_alloc(&pathlen);
 	if (pathlen <= strlen(pathname)) {
@@ -64,7 +65,6 @@ static int myftw(char *pathname, Myfunc *func) {
  * call func(), and return. For a directory, we call ourself recursively
  * for each name in the directory.
  */
-
 static int dopath(Myfunc* func) {
 	struct stat statbuf;
 	struct dirent *dirp;
