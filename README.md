@@ -17,6 +17,7 @@
 - `2019-08-05` Chapter 7.1
 - `2019-08-19` Chapter 7.5
 - `2019-08-27` Chapter 7.9
+- `2019-08-30` Chapter 7.11
 
 #### Exercises not solved
 
