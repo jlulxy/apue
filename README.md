@@ -1,6 +1,6 @@
-## AUEP
+# AUEP
 
-#### Schedule from 2019-07-11
+## Schedule from 2019-07-11
 
 - `2019-07-11` Chapter 3.4
 - `2019-07-11` Chapter 3.6
@@ -19,7 +19,12 @@
 - `2019-08-27` Chapter 7.9
 - `2019-08-30` Chapter 7.11
 
-#### Exercises not solved
+## Exercises not solved
 
 - Exercise 5.7 [hard]
+- Exercise 7.4 [can't understand]
+
+## Exervises writed more
+
+- ch07/e7-3.md, "my tipical solution approach".
 
