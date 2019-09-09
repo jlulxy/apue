@@ -31,3 +31,8 @@
 
 - ch07/e7-3.md, "my tipical solution approach".
 
+## Excerpts from the book
+
+- [243] Note that the shell prints its prompt when the original process
+terminates, which is before the second child prints its parent process ID.
+
