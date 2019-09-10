@@ -33,6 +33,23 @@
 
 ## Excerpts from the book
 
-- [243] Note that the shell prints its prompt when the original process
+- `[f8.17, p255] -> [shell prompt print, p234]`
+Note that the shell prints its prompt when the original process
 terminates, which is before the second child prints its parent process ID.
+
+-  `[ch8.11, p255] -> [set-user-ID bit, p99]`
+When we execute a program file, the effective user ID of the process is usually
+the real user ID, and the effective group ID is usually the real group ID.
+However, we can also set a special flag in the file's mode word (st_mode) that
+says, "When this file is executed, set the effective user ID of the process to
+be the owner of the file (st_uid)."
+For example, if the owner of the file is the superuser and if the file's
+set-user-ID bit is set, then while that program file is running as a process, it
+has superuser privileges. This happens regradless of the real user ID of the
+process that executes the file. As an example, the UNIX system program that
+allows anyone to change his or her password, `passwd`, is a set-user-ID program.
+This is required so that the program can write new password to the password file
+, typically either `/etc/passwd` or `/etc/shadow`, files that should be writable
+only by the superuser. Because a process that is running set-user-ID to some
+other user usually assumes extra permissions, it must be written carefully.
 
