@@ -54,3 +54,10 @@ This is required so that the program can write new password to the password file
 only by the superuser. Because a process that is running set-user-ID to some
 other user usually assumes extra permissions, it must be written carefully.
 
+- `[ch8.13, p264] put a time-and-date stamp into a certain file`
+We could use the functions described in Section 6.10 to do this: call `time` to
+get the current calendar time, then call `localtime` to convert it to a
+broken-down time, then call `strftime` to format the result, the finally write
+the result to the file.
+
+

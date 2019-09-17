@@ -3,6 +3,6 @@
 .DS_Store
 *.swp
 
-# .tmp file is some template file for testing
+# .tmp and .file is some template file for testing
 *.tmp
-
+*.file
