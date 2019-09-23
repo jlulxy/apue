@@ -60,4 +60,9 @@ get the current calendar time, then call `localtime` to convert it to a
 broken-down time, then call `strftime` to format the result, the finally write
 the result to the file.
 
+- `[ch8.10, p254] set arg0 in exec functions to be the filename`
+Note also that we set the first argument, `argv[0]` in the new prgram, to be the
+filename componment of the pathname. Some shell set this argument to be the
+complete pathname. This is a convention only; we can set `argv[0]` to any string
+we like.
 
