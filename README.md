@@ -22,6 +22,7 @@
 - `2019-09-06` Chapter 8.4
 - `2019-09-08` Chapter 8.10
 - `2019-09-14` Chapter 8.12
+- `2019-09-23` Reread Chpter 8.4 - 8.12
 
 ## Exercises not solved
 
