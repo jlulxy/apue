@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
 		_exit(0);
 		// exit(0);
 		
-		//** _exit() does not perfrom any flush of standard I/O buffers.
+		// _exit() does not perfrom any flush of standard I/O buffers.
 	}
 
 	printf("pid = %ld, glob = %d, var = %d\n", (long)getpid(), globvar, var);
