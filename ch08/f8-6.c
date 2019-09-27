@@ -18,8 +18,8 @@ int main(int argc, char *argv[]) {
 	if ((pid = fork()) < 0) {
 		err_sys("fork error");
 	} else if (pid == 0) {
-		// exit(7);
-		exit(1023);
+		exit(7);
+		// exit(1023);
 	}
 	if (wait(&status) != pid) {
 		err_sys("wait error");
