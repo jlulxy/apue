@@ -24,7 +24,8 @@
 - `2019-09-14` Chapter 8.12
 - `2019-09-23` Reread Chpter 8.4 - 8.12
 - `2019-09-23` Chpter 8.14
-- `2019-09-27` Chpter 9.1
+- `2019-09-27` Chpter 9.1 **delay reading until finish Chapter 10**
+- `2019-10-25` Chpter 10.2
 
 ## Exercises not solved
 
