@@ -2,35 +2,36 @@
 
 ## Schedule from 2019-07-11
 
-- `2019-07-11` Chapter 3.4
-- `2019-07-11` Chapter 3.6
-- `2019-07-12` Chapter 3.12
-- `2019-07-12` Chapter 3.14
-- `2019-07-13` Chapter 3.16
-- `2019-07-14` Exercises 3.4
-- `2019-07-15` Chapter 4.8
-- `2019-07-22` Chapter 4.14
-- `2019-07-22` Chapter 4.19
-- `2019-07-23` Exercises 4.4
-- `2019-07-29` Chapter 5.4
-- `2019-07-30` Chapter 6.1
-- `2019-08-05` Chapter 7.1
-- `2019-08-19` Chapter 7.5
-- `2019-08-27` Chapter 7.9
-- `2019-08-30` Chapter 7.11
-- `2019-09-01` Chapter 8.3
-- `2019-09-06` Chapter 8.4
-- `2019-09-08` Chapter 8.10
-- `2019-09-14` Chapter 8.12
-- `2019-09-23` Reread Chpter 8.4 - 8.12
-- `2019-09-23` Chpter 8.14
-- `2019-09-27` Chpter 9.1 **delay reading until finish Chapter 10**
-- `2019-10-25` Chpter 10.2
+- `2019-07-11` chapter 3.4
+- `2019-07-11` chapter 3.6
+- `2019-07-12` chapter 3.12
+- `2019-07-12` chapter 3.14
+- `2019-07-13` chapter 3.16
+- `2019-07-14` exercise 3.4
+- `2019-07-15` chapter 4.8
+- `2019-07-22` chapter 4.14
+- `2019-07-22` chapter 4.19
+- `2019-07-23` exercise 4.4
+- `2019-07-29` chapter 5.4
+- `2019-07-30` chapter 6.1
+- `2019-08-05` chapter 7.1
+- `2019-08-19` chapter 7.5
+- `2019-08-27` chapter 7.9
+- `2019-08-30` chapter 7.11
+- `2019-09-01` chapter 8.3
+- `2019-09-06` chapter 8.4
+- `2019-09-08` chapter 8.10
+- `2019-09-14` chapter 8.12
+- `2019-09-23` review chapter 8.4 - 8.12
+- `2019-09-23` chapter 8.14
+- `2019-09-27` chapter 9.1 **delay reading until finish chapter 10**
+- `2019-10-25` chapter 10.2
+- `2019-10-27` review chapter 10 to 10.2.[Program Start-up]
 
-## Exercises not solved
+## Exercise not solved
 
-- Exercise 5.7 [hard]
-- Exercise 7.4 [can't understand]
+- exercise 5.7 [hard]
+- exercise 7.4 [can't understand]
 
 ## Exervises writed more
 
