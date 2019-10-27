@@ -3,12 +3,18 @@
 static void sig_usr(int);
 
 int main(void) {
-	if (signal(SIGUSR1, sig_usr) == SIG_ERR) {
+	void* usr1 = NULL;
+	void* usr2 = NULL;
+	usr1 = signal(SIGUSR1, sig_usr);
+	if (usr1 == SIG_ERR) {
 		err_sys("can't catch SIGUSR1");
 	}
-	if (signal(SIGUSR2, sig_usr) == SIG_ERR) {
+	usr2 = signal(SIGUSR2, sig_usr);
+	if (usr2 == SIG_ERR) {
 		err_sys("can't catch SIGUSR2");
 	}
+	printf("usr1 = %p\n", usr1);
+	printf("usr2 = %p\n", usr2);
 	for ( ; ; ) {
 		pause();
 	}
