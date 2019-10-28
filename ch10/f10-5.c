@@ -2,15 +2,26 @@
 #include <pwd.h>
 
 static void my_alarm(int signo) {
-	struct passwd *rootptr;
+	struct passwd *ptr;
 	
 	printf("in signal handler\n");
-	if ((rootptr = getpwnam("ubuntu")) == NULL) {
-		err_sys("getpwnam(ubuntu) error");
-	}
-	alarm(1);
-	printf("signal function with pw_name=%s\n", rootptr->pw_name);
+	/* Why the code comment below will block the process?
+	 * But not just corrupt??
+	 */
+	// if ((ptr = getpwnam("ubuntu")) == NULL) {
+	// 	err_sys("getpwnam(ubuntu) error");
+	// }
+	// if (strcmp(ptr->pw_name, "ubuntu") != 0) {
+	// 	printf("return value corrupted!, pw_name=%s\n", ptr->pw_name);
+	// }
+	printf("signal function with pw_name=%s\n", ptr->pw_name);
 	printf("my_alarm() alarm(1)\n");
+	// signal(SIGALRM, my_alarm);
+	
+	/* alarm() will be reset to default behavier that print a `Alarm Clock`
+     * and terminate this process
+	 */
+	alarm(1);
 }
 
 int main(void) {
@@ -31,7 +42,9 @@ int main(void) {
 		if (strcmp(ptr->pw_name, "ubuntu") != 0) {
 			printf("return value corrupted!, pw_name=%s\n", ptr->pw_name);
 		}
-		// printf("i=%8d with pw_name=%s\n", i, ptr->pw_name);
+		/* printf() is un-reentrant function, will be corrupted by signal handler
+		*/
+		// printf("i=%10d\n", i);
 		if (i >= 100000000) {
 			i = 0;
 		}
