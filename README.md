@@ -28,6 +28,7 @@
 - `2019-10-25` chapter 10.2
 - `2019-10-27` review chapter 10 to 10.2.[Program Start-up]
 - `2019-10-28` chapter 10.6 + review chapter 7.10
+- `2019-10-29` chapter 10.13
 
 ## Exercise not solved
 
