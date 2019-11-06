@@ -2,34 +2,35 @@
 
 ## Schedule from 2019-07-11
 
-- `2019-07-11` chapter 3.4
-- `2019-07-11` chapter 3.6
-- `2019-07-12` chapter 3.12
-- `2019-07-12` chapter 3.14
-- `2019-07-13` chapter 3.16
-- `2019-07-14` exercise 3.4
-- `2019-07-15` chapter 4.8
-- `2019-07-22` chapter 4.14
-- `2019-07-22` chapter 4.19
-- `2019-07-23` exercise 4.4
-- `2019-07-29` chapter 5.4
-- `2019-07-30` chapter 6.1
-- `2019-08-05` chapter 7.1
-- `2019-08-19` chapter 7.5
-- `2019-08-27` chapter 7.9
-- `2019-08-30` chapter 7.11
-- `2019-09-01` chapter 8.3
-- `2019-09-06` chapter 8.4
-- `2019-09-08` chapter 8.10
-- `2019-09-14` chapter 8.12
-- `2019-09-23` review chapter 8.4 - 8.12
-- `2019-09-23` chapter 8.14
-- `2019-09-27` chapter 9.1 **delay reading until finish chapter 10**
-- `2019-10-25` chapter 10.2
-- `2019-10-27` review chapter 10 to 10.2.[Program Start-up]
-- `2019-10-28` chapter 10.6 + review chapter 7.10
-- `2019-10-29` chapter 10.13
+- `2019-11-06` chapter 10.16
 - `2019-10-29` chapter 10.16 **There will be a lot of coding instead of reading**
+- `2019-10-29` chapter 10.13
+- `2019-10-28` chapter 10.6 + review chapter 7.10
+- `2019-10-27` review chapter 10 to 10.2.[Program Start-up]
+- `2019-10-25` chapter 10.2
+- `2019-09-27` chapter 9.1 **delay reading until finish chapter 10**
+- `2019-09-23` chapter 8.14
+- `2019-09-23` review chapter 8.4 - 8.12
+- `2019-09-14` chapter 8.12
+- `2019-09-08` chapter 8.10
+- `2019-09-06` chapter 8.4
+- `2019-09-01` chapter 8.3
+- `2019-08-30` chapter 7.11
+- `2019-08-27` chapter 7.9
+- `2019-08-19` chapter 7.5
+- `2019-08-05` chapter 7.1
+- `2019-07-30` chapter 6.1
+- `2019-07-29` chapter 5.4
+- `2019-07-23` exercise 4.4
+- `2019-07-22` chapter 4.19
+- `2019-07-22` chapter 4.14
+- `2019-07-15` chapter 4.8
+- `2019-07-14` exercise 3.4
+- `2019-07-13` chapter 3.16
+- `2019-07-12` chapter 3.14
+- `2019-07-12` chapter 3.12
+- `2019-07-11` chapter 3.6
+- `2019-07-11` chapter 3.4
 
 ## Exercise not solved
 
