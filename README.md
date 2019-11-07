@@ -78,6 +78,9 @@ complete pathname. This is a convention only; we can set `argv[0]` to any string
 we like.
 
 ## Shell command strings
-- `kill -10 $(ps aux | grep -v grep | grep a.out | awk '{print $2}')` send SIGUSR1
-to process `a.out`.
+- `kill -l` to show all signals.
+- `kill -10 $(ps aux | grep -v grep | grep a.out | awk '{print $2}')` send
+SIGUSR1 to process `a.out`.
+- `ulimit -a` to show limits, `ulimit -c unlimited` to create a core file when
+process core and use `gcc -g` to open debug for gdb.
 
