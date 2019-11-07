@@ -6,3 +6,6 @@
 # .tmp and .file is some template file for testing
 *.tmp
 *.file
+
+*/core
+
