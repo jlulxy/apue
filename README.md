@@ -2,13 +2,14 @@
 
 ## Schedule from 2019-07-11
 
+- `2019-11-07` chapter 10.17 **Still need time to understand signal**
 - `2019-11-06` chapter 10.16
 - `2019-10-29` chapter 10.16 **There will be a lot of coding instead of reading**
 - `2019-10-29` chapter 10.13
 - `2019-10-28` chapter 10.6 + review chapter 7.10
 - `2019-10-27` review chapter 10 to 10.2.[Program Start-up]
 - `2019-10-25` chapter 10.2
-- `2019-09-27` chapter 9.1 **delay reading until finish chapter 10**
+- `2019-09-27` chapter 9.1 **Delay reading until finish chapter 10**
 - `2019-09-23` chapter 8.14
 - `2019-09-23` review chapter 8.4 - 8.12
 - `2019-09-14` chapter 8.12
