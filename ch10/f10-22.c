@@ -10,6 +10,7 @@ int main(void) {
 	if (signal(SIGINT, sig_int) == SIG_ERR) {
 		err_sys("signal(SIGINT) error");
 	}
+	
 	sigemptyset(&waitmask);
 	sigaddset(&waitmask, SIGUSR1);
 	sigemptyset(&newmask);
