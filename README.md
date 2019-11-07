@@ -77,3 +77,7 @@ filename componment of the pathname. Some shell set this argument to be the
 complete pathname. This is a convention only; we can set `argv[0]` to any string
 we like.
 
+## Shell command strings
+- `kill -10 $(ps aux | grep -v grep | grep a.out | awk '{print $2}')` send SIGUSR1
+to process `a.out`.
+
