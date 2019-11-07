@@ -3,6 +3,7 @@
 #include <errno.h>
 
 static void sig_quit(int);
+static int sig_catch_cnt = 0;
 
 int main(void) {
 	sigset_t newmask, oldmask, pendmask;
@@ -36,21 +37,30 @@ int main(void) {
 	/*
 	 * Restore signal mask which unblocks SIGQUIT
 	 */
+	printf("\nStart SIGQUIT unblocked\n");
 	if (sigprocmask(SIG_SETMASK, &oldmask, NULL) < 0) {
 		err_sys("SIG_SETMASK error");
 	}
-	printf("\nSIGQUIT unblocked\n");
+	printf("\nAfter SIGQUIT unblocked sleeping: \n");
 
 	/* SIGQUIT here will terminate with core file */ 
-	sleep(30);
+	for (int i = 0; i < 30; i++) {
+		printf(">>> the %d second sleep\n", i);
+		sleep(1);
+	}
+	printf("\n");
 	exit(0);
 }
 
 static void sig_quit(int signo) {
-	printf("caught SIGQUIT");
+	printf("\nThe [%d] time caught SIGQUIT in sig_quit()\n", sig_catch_cnt++);
 	if (signal(SIGQUIT, SIG_DFL) == SIG_ERR) {
 		err_sys("can't reset SIGQUIT");
 	}
-
+	if (signal(SIGQUIT, sig_quit) == SIG_ERR) {
+		err_sys("can't catch SIGQUIT");
+	} else {
+		printf("sig SIGQUIT again in sig_quit() !!!\n");
+	}
 }
 
