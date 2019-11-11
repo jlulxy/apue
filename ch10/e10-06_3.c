@@ -1,8 +1,7 @@
 /* 
  * 2019-11-11 eggmeng
- * In this version, I first fopen a file, and pass the FILE pointer to both
- * processes.
- * But why parent and child both print increase n to 49?
+ * Delete recall fopen() in child, the problem is, after getc/putc file offset
+ * will be 1, always pay attention to offset and call rewind.
  */
 
 #include "apue.h"
@@ -22,6 +21,12 @@ int main(void) {
 	}
 	// fflush(fp);
 	rewind(fp);
+	
+	//** 2019-11-11
+	//** I can set fp unbuffered instead of calling fflush(fp) everytime
+	//** in function increase_at_a_time().
+	setbuf(fp, NULL);
+
 	if ((c = getc(fp)) == -1) {
 		err_sys("getc error");
 	}
@@ -35,24 +40,19 @@ int main(void) {
 		printf("child pid = %d\n", getpid());
 		sleep(1);
 		WAIT_PARENT();
-		//** Error output: `getc error: Interrupted system call`
-		//** See more in e10-06_2.c
-		//** Use mode "r+" instead of "w+":
-		// if ((fp = fopen("e10-06.txt", "w+")) == NULL) {
-		if ((fp = fopen("e10-06.txt", "r+")) == NULL) {
-			err_sys("fopen error");
-		}
-		int c = increase_at_a_time(fp);
+		c = increase_at_a_time(fp);
 		printf("childd: %d increase int to %d\n", getpid(), c);
-		printf("child %d finished!\n", getpid());
+		printf("childd: %d finished!\n", getpid());
 	} else {
 		printf("parent pid = %d\n", getpid());
 		sleep(1);
-		int c = increase_at_a_time(fp);
-		printf("parend: %d increase int to %d\n", getpid(), c);
+		c = increase_at_a_time(fp);
+		printf("parent: %d increase int to %d\n", getpid(), c);
+		printf("parent: %d finished!\n", getpid());
 		TELL_CHILD(pid);
-		printf("parent %d finished!\n", getpid());
-		fclose(fp);
+		//** fflush here doesn't work cause this just flush parent's IO.
+		//** We need flush child opened IO.
+		fflush(fp);
 	}
 
 	return 0;
@@ -60,7 +60,10 @@ int main(void) {
 
 static int increase_at_a_time(FILE *fp) {
 	int n = 0;
-	
+	//** !!!MUST flush IO to detect chaning.
+	//** Already set fp unbuffered.
+	//fflush(fp);
+
 	printf("\nin increase_at_a_time() fp offset=%ld\n", ftell(fp));	
 	rewind(fp);
 	if ((n = getc(fp)) == -1) {
