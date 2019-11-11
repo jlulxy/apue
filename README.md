@@ -84,3 +84,8 @@ SIGUSR1 to process `a.out`.
 - `ulimit -a` to show limits, `ulimit -c unlimited` to create a core file when
 process core and use `gcc -g` to open debug for gdb.
 
+## Other refereance
+- [Opening Streams](https://www.gnu.org/software/libc/manual/html_node/Opening-Streams.html):
+Additional characters may appear after these to specify flags for the call. Always put the mode
+(r, w+, etc) first, that is the only part you are guaranteed will be understood by all stream. 
+
