@@ -1,9 +1,34 @@
 nohup: ignoring input
-Current local time and date: Mon Nov 18 00:07:01 2019
+Current local time and date: Mon Nov 18 13:24:39 2019
 
-Current local time and date: Mon Nov 18 00:12:01 2019
+time_t difference = 1574054679
+Current local time and date: Mon Nov 18 13:29:39 2019
 
-Current local time and date: Mon Nov 18 00:17:01 2019
+time_t difference = 300
+Current local time and date: Mon Nov 18 13:34:39 2019
 
-Current local time and date: Mon Nov 18 00:22:01 2019
+time_t difference = 300
+Current local time and date: Mon Nov 18 13:39:39 2019
 
+time_t difference = 300
+Current local time and date: Mon Nov 18 13:44:39 2019
+
+time_t difference = 300
+Current local time and date: Mon Nov 18 13:49:39 2019
+
+time_t difference = 300
+Current local time and date: Mon Nov 18 13:54:39 2019
+
+time_t difference = 300
+Current local time and date: Mon Nov 18 13:59:39 2019
+
+time_t difference = 300
+Current local time and date: Mon Nov 18 14:04:39 2019
+
+time_t difference = 300
+Current local time and date: Mon Nov 18 14:09:39 2019
+
+time_t difference = 300
+Current local time and date: Mon Nov 18 14:14:39 2019
+
+time_t difference = 300
