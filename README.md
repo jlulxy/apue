@@ -2,6 +2,8 @@
 
 ## Schedule from 2019-07-11
 
+- `2019-11-21` chapter 11.5
+- `2019-11-20` chapter 11 **Basically review whole chapter in Chinese**
 - `2019-11-07` chapter 11 **Use exercises to review this longest chapter 10**
 - `2019-11-07` chapter 10.17 **Still need time to understand signal**
 - `2019-11-06` chapter 10.16
