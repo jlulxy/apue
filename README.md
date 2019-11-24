@@ -7,7 +7,7 @@
 - `2019-11-07` chapter 11 **Use exercises to review this longest chapter 10**
 - `2019-11-07` chapter 10.17 **Still need time to understand signal**
 - `2019-11-06` chapter 10.16
-- `2019-10-29` chapter 10.16 **There will be a lot of coding instead of reading**
+- `2019-10-29` chapter 10.16 **There will be a lot of coding**
 - `2019-10-29` chapter 10.13
 - `2019-10-28` chapter 10.6 + review chapter 7.10
 - `2019-10-27` review chapter 10 to 10.2.[Program Start-up]
@@ -79,6 +79,12 @@ filename componment of the pathname. Some shell set this argument to be the
 complete pathname. This is a convention only; we can set `argv[0]` to any string
 we like.
 
+- `[ch11.6, p339] mutex short for mutual-exclusion`
+We can protect our data and ensure access by only one thread at a time by using
+the pthreads mutual-exclusion interfaces. A **mutex** is basically a lock that
+we set (lock) before accessing a shared resource and release (unlick) when we're
+done.  
+
 ## Shell command strings
 - `kill -l` to show all signals.
 - `kill -10 $(ps aux | grep -v grep | grep a.out | awk '{print $2}')` send
@@ -87,7 +93,10 @@ SIGUSR1 to process `a.out`.
 process core and use `gcc -g` to open debug for gdb.
 
 ## Other refereance
-- [Opening Streams](https://www.gnu.org/software/libc/manual/html_node/Opening-Streams.html):
-Additional characters may appear after these to specify flags for the call. Always put the mode
-(r, w+, etc) first, that is the only part you are guaranteed will be understood by all stream. 
+- [Opening Streams](
+https://www.gnu.org/software/libc/manual/html_node/Opening-Streams.html):
+Additional characters may appear after these to specify flags for the call.
+Always put the mode
+(r, w+, etc) first, that is the only part you are guaranteed will be understood
+by all stream. 
 
