@@ -86,6 +86,16 @@ the pthreads mutual-exclusion interfaces. A **mutex** is basically a lock that
 we set (lock) before accessing a shared resource and release (unlick) when we're
 done.  
 
+- `[ch11.6, p414] pthread_cond_wait`
+The mutex passed to `pthread_cond_wait` protects the condition. The caller
+passes it **locked** to the function, which then atomically places the calling
+thread on the list of threads waiting for the condition and unlocks the mutex.
+This closes the window between the time that the condition is checked and the
+time that the thread goes to sleep waiting for the condition to change, so that
+the thread doesn't miss a change in the condition. When `pthread_cond_wait`
+returns, the mutex is **again locked**.
+
+
 ## Shell command strings
 - `kill -l` to show all signals.
 - `kill -10 $(ps aux | grep -v grep | grep a.out | awk '{print $2}')` send
