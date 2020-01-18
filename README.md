@@ -2,6 +2,7 @@
 
 ## Schedule from 2019-07-11
 
+- `2019-12-22` review chapter 11
 - `2019-11-26` chapter 11.6.6
 - `2019-11-21` chapter 11.5
 - `2019-11-20` chapter 11 **Basically review whole chapter in Chinese**
