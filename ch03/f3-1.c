@@ -1,10 +1,11 @@
 #include "apue.h"
 
-int main(void) {
-    if (lseek(STDIN_FILENO, 0, SEEK_CUR) == -1) {
-        printf("can't seek\n");
-    } else {
-        printf("seek OK\n");
+int main(void){
+    off_t surrpos;
+    if ((surrpos = lseek(STDIN_FILENO,0,SEEK_CUR)) == -1){
+        printf("cannot seek\n");
+    }else{
+        printf("seek OK %lld\n",surrpos);
     }
     exit(0);
 }
