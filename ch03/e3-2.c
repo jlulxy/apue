@@ -1,8 +1,13 @@
+/*
+3.2 编写一个与3.12节中dup2功能相同的函数，要求不屌用fcntl函数，并且要有正确的出错处理。
+本质就是一次打开小于fd2的函数通过dup，找到后再关闭之前的打开的fd
+*/
 /* 
  * 2019-07-14 10:44
  * Call dup() until get fd=fd2, This will be super slow
  */
 #include "apue.h"
+#include "stdlib.h"
 
 int mydup2(int fd, int fd2);
 
@@ -19,7 +24,8 @@ int main(int argc, char** argv) {
     }
     int ret = mydup2(fd, fd2);
     printf("mydup2 ret=%d\n", ret);
-
+    size_t write_size;
+    write(fd2,"hello World!\n",sizeof("hello World!\n"));
     exit(0);
 }
 
